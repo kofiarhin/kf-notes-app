@@ -54,8 +54,9 @@ const loginController = async (req, res) => {
     // generate token
     const token = jwt.sign({ id: user._id }, process.env.ACCESS_TOKEN_SECRET);
     res.cookie("token", token);
-    res.redirect("/notes/home");
+    res.redirect("/users/profile");
   } catch (error) {
+    res.render("error");
     console.log(error);
   }
 };

@@ -112,3 +112,8 @@ font-size: 1.2rem;
 #notes .notes-wrapper p{
     font-size: 0.8rem;
 }
+
+#profiile {
+    text-align: center;
+    margin-bottom: 8rem;
+}
