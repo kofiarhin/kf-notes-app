@@ -54,6 +54,25 @@ a {
     padding: 2rem 0rem;
 }
 
+.main-header h1 {
+    font-size: 1.2rem;
+}
+
+.main-header form {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.main-header form input {
+    width: 100%;
+    outline: none;
+    border: none;
+    text-indent: 10px;
+    font-size: 1rem; 
+    padding: 0.5rem 0rem;
+    border-radius: 20px;
+}
+
 .main-header .container a {
     display: inline-block;
     margin-left: 1rem;
@@ -114,11 +133,16 @@ font-size: 1.2rem;
 /* styling notes section */
 
 #notes .notes-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+min-height: 70vh;
 }
 
+#notes .notes-wrapper .note-unit {
+    display: block;
+    margin-bottom: 1rem;
+}
+#notes h1 {
+    font-size: 1.5rem;
+}
 #notes .notes-wrapper p{
     font-size: 0.8rem;
 }
@@ -126,4 +150,27 @@ font-size: 1.2rem;
 #profiile {
     text-align: center;
     margin-bottom: 8rem;
+}
+
+/* styling the create section */
+#create .form-wrapper {
+    width: 640px;
+}
+
+#register {
+    min-height: 70vh;
+}
+
+#login {
+    min-height: 70vh;
+}
+
+#hero {
+    min-height: 70vh;
+}
+
+#hero .text-wrapper {
+    width: 540px;
+    max-width: 90%;
+    margin: 0 auto;
 }

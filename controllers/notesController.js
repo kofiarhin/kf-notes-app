@@ -5,7 +5,9 @@ const getNoteHomeController = async (req, res) => {
   // get notes
 
   try {
-    const notes = await Note.find({ owner: req.user._id });
+    const notes = await Note.find({ owner: req.user._id }).sort({
+      createdAt: -1,
+    });
 
     console.log(notes);
     res.render("notes/home", {
@@ -91,6 +93,34 @@ const deleteNoteController = async (req, res) => {
   }
 };
 
+// search post
+const searchPostController = async (req, res) => {
+  try {
+    const { searchItem } = req.body;
+    const sanitizedSearchParam = searchItem.replace(/[^\w\s]/gi, "");
+    const notes = await Note.find({
+      $and: [
+        {
+          $or: [
+            { title: { $regex: sanitizedSearchParam, $options: "i" } },
+            { text: { $regex: sanitizedSearchParam, $options: "i" } },
+          ],
+        },
+        { owner: req.user._id },
+      ],
+    }).sort({ createdAt: -1 });
+
+    res.render("notes/search", {
+      layout: HOMELAYOUT,
+      user: req.user,
+      searchItem,
+      notes,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   getNotesCreateController,
   createNotesController,
@@ -98,4 +128,5 @@ module.exports = {
   getNoteController,
   updateNoteController,
   deleteNoteController,
+  searchPostController,
 };

@@ -1,0 +1,27 @@
+
+<section id="notes">
+    
+    <h1 class="heading">Search Result for <%= searchItem  %>(<%= notes.length  %>) </h1>
+    <div class="container">
+        <% if (notes && notes.length> 0 ) { %>
+            <div class="notes-wrapper">
+                <% notes.forEach(note=> { %>
+                    <a href="/notes/<%= note._id %>" class="note-unit">
+                        <h3>
+                            <%= note.title.substring(0,40) %>....
+                        </h3>
+                        <p> <b>
+                                <%= note.createdAt.toLocaleDateString('en-US', { year: 'numeric' , month: 'short' ,
+                                    day: 'numeric' }) %>
+                            </b>
+                            <%= note.text.substring(0, 30) %>
+                        </p>
+                    </a>
+                    <% }) %>
+            </div>
+            <% } else { %>
+                <h1 class="info">No Notes found</h1>
+                <% } %>
+    </div>
+
+</section>

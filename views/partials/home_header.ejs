@@ -1,11 +1,15 @@
 <header class="main-header">
     <div class="container">
         <h1 class="logo">
-            <a href="/notes/home">Notes</a>
+            <a href="/notes/home">MorningPages</a>
         </h1>
 
+        <form action="/notes/search" method="post">
+            <input type="search" name="searchItem" placeholder="Search....">
+        </form>
+
         <nav>
-            <a href="/users/profile"> <%= user.email  %></a>
+            <a href="/users/profile"> <%= user.name  %></a>
             <a href="/notes/home"> Notes</a>
             <a href="/notes/create"> Create</a>
             <a href="/users/logout">Logout</a>
