@@ -1,5 +1,10 @@
 <div id="register">
     <h1 class="heading">Register</h1>
+    <div class="text-wrapper">
+        <p class="error">
+            <%= error %>
+        </p>
+    </div>
     
     <div class="form-wrapper">
         <form action="/users/register" method="post">
@@ -10,9 +15,4 @@
         </form>
     </div>
     
-    <div class="text-wrapper">
-        <p class="error">
-            <%= error %>
-        </p>
-    </div>
 </div>
