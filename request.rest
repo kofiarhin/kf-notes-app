@@ -7,7 +7,7 @@ GET http://localhost:5000/register
 GET http://localhost:5000/login
 
 
-###
+### create user
 POST http://localhost:5000/users/register
 Content-Type: application/json
 
@@ -37,5 +37,6 @@ Content-Type: application/json
 }
 
 
+# get notes
 ###
 GET http://localhost:5000/notes/home

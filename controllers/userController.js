@@ -10,11 +10,12 @@ const homePage = (req, res) => {
 
 // get register
 const getRegisterController = (req, res) => {
-  res.render("register");
+  res.render("register", { error: "" });
 };
 
+// render login page
 const getLoginController = (req, res) => {
-  res.render("login");
+  res.render("login", { error: "" });
 };
 
 // create user
@@ -29,8 +30,9 @@ const createUserController = async (req, res) => {
     await user.save();
     res.redirect("/users/login");
   } catch (error) {
-    console.log(error);
-    res.status(400).render("error", { message: "someting went wrong" });
+    if (error.code === 11000)
+      return res.render("register", { error: "Email already in use" });
+    res.render("register", { error: "Please fill all fields" });
   }
 };
 
@@ -56,7 +58,7 @@ const loginController = async (req, res) => {
     res.cookie("token", token);
     res.redirect("/users/profile");
   } catch (error) {
-    res.render("error");
+    res.render("login", { error: "please check details and try again" });
     console.log(error);
   }
 };
