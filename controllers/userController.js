@@ -2,6 +2,8 @@ const User = require("../model/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+const HOMELAYOUT = "./layout/home";
+
 const homePage = (req, res) => {
   res.render("index");
 };
@@ -52,7 +54,7 @@ const loginController = async (req, res) => {
     // generate token
     const token = jwt.sign({ id: user._id }, process.env.ACCESS_TOKEN_SECRET);
     res.cookie("token", token);
-    res.redirect("home");
+    res.redirect("/notes/home");
   } catch (error) {
     console.log(error);
   }
@@ -73,6 +75,14 @@ const logoutController = (req, res) => {
   res.clearCookie("token");
   res.redirect("login");
 };
+
+const getProfilecontroller = async (req, res) => {
+  res.render("profile", {
+    layout: HOMELAYOUT,
+    user: req.user,
+  });
+};
+
 module.exports = {
   homePage,
   getRegisterController,
@@ -81,4 +91,5 @@ module.exports = {
   loginController,
   getHomeController,
   logoutController,
+  getProfilecontroller,
 };

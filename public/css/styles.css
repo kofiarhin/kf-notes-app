@@ -29,6 +29,12 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.info {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
 /* header styling */
 
 .main-header .container  {
@@ -68,8 +74,11 @@ footer {
     font-size: 0.8rem;
 }
 
-.form-wrapper form input {
+.form-wrapper form input, 
+.form-wrapper form textarea
+{
 text-indent: 10px;
+font-size: 1.2rem;
 }
 
 .form-wrapper form button {
@@ -77,4 +86,29 @@ text-indent: 10px;
     background-color: black;
     color: white;
     cursor: pointer;
+}
+
+.form-wrapper form button.delete {
+    background-color: red;
+}
+
+.form-wrapper form a {
+    display: inline-block;
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* styling notes section */
+
+#notes .notes-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+#notes .notes-wrapper p{
+    font-size: 0.8rem;
 }

@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
+const methodOverride = require("method-override");
 const connect = require("./config/db");
 const layout = require("express-ejs-layouts");
 const userRoutes = require("./routes/userRouter");
@@ -12,6 +13,7 @@ connect();
 
 // setup middlewares
 app.use(express.json());
+app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(layout);
@@ -22,9 +24,6 @@ app.use(express.static("public"));
 app.use(pagesRouter);
 app.use("/users/", userRoutes);
 app.use("/notes", notesRouter);
-app.get("*", (req, res) => {
-  res.redirect("error");
-});
 
 const port = process.env.PORT || 5000;
 

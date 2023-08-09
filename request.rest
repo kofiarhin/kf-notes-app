@@ -25,3 +25,17 @@ Content-Type: application/json
     "email": "kofiarhin@gmail.com",
     "password": "password"
 }
+
+
+###
+POST http://localhost:5000/notes/create
+Content-Type: application/json
+
+{
+    "title": "my first note",
+    "text": "details of first note"
+}
+
+
+###
+GET http://localhost:5000/notes/home

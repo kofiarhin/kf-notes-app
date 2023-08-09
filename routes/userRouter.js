@@ -7,6 +7,7 @@ const {
   loginController,
   getHomeController,
   logoutController,
+  getProfilecontroller,
 } = require("../controllers/userController");
 const { Auth } = require("../middleware/auth");
 const router = Router();
@@ -18,8 +19,6 @@ router.post("/register", createUserController);
 router.post("/login", loginController);
 router.get("/home", Auth, getHomeController);
 router.get("/logout", logoutController);
-router.get("/*", (req, res) => {
-  res.redirect("/error");
-});
+router.get("/profile", Auth, getProfilecontroller);
 
 module.exports = router;

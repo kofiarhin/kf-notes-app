@@ -1,0 +1,16 @@
+<h1 class="heading"> <%= note.title  %> </h1>
+
+<div id="view">
+    <div class="form-wrapper">
+        <form action="notes/<%= note._id  %>?_method=put" method="post">
+            <input type="text" name="title" value="<%= note.title  %>">
+            <textarea name="text" id="" cols="30" rows="10"><%= note.text  %></textarea>
+            <button type="submit">Save</button>
+            
+        </form>
+
+        <form action="notes/<%= note._id %>?_method=delete" method="post" >
+        <button type="submit" class="delete">Delete</button>
+        </form>
+    </div>
+</div>
