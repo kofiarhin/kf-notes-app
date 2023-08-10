@@ -2,7 +2,7 @@ const User = require("../model/userModel");
 const jwt = require("jsonwebtoken");
 
 const getIndex = (req, res) => {
-  res.render("index");
+  res.render("index", { user: "" });
 };
 
 const getHome = (req, res) => {

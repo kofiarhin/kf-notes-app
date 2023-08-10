@@ -5,17 +5,17 @@ const jwt = require("jsonwebtoken");
 const HOMELAYOUT = "./layout/home";
 
 const homePage = (req, res) => {
-  res.render("index");
+  res.render("index", { user: "" });
 };
 
 // get register
 const getRegisterController = (req, res) => {
-  res.render("register", { error: "" });
+  res.render("register", { error: "", user: "" });
 };
 
 // render login page
 const getLoginController = (req, res) => {
-  res.render("login", { error: "" });
+  res.render("login", { error: "", user: "" });
 };
 
 // create user

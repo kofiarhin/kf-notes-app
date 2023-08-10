@@ -174,3 +174,57 @@ min-height: 70vh;
     max-width: 90%;
     margin: 0 auto;
 }
+
+.menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+#sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#sidenav.show {
+display: flex;
+}
+
+#sidenav i {
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#sidenav a {
+    color: white;
+}
+
+#sidenav ul li {
+    margin-bottom: 1rem;
+}
+@media(max-width: 640px) {
+
+    .heading {
+        font-size: 1.4rem;
+    }
+
+    .main-header nav {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+}
