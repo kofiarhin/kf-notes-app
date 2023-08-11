@@ -76,6 +76,7 @@ a {
 .main-header .container a {
     display: inline-block;
     margin-left: 1rem;
+    font-weight: 900;
 }
 
 footer {
@@ -115,6 +116,7 @@ font-size: 1.2rem;
     background-color: black;
     color: white;
     cursor: pointer;
+    padding: 0.8rem 0rem;
 }
 
 .form-wrapper form button.delete {
@@ -226,17 +228,31 @@ display: flex;
 #sidenav ul li {
     margin-bottom: 1rem;
 }
+
+#sidenav ul li form input {
+    padding: 0.4rem 0rem;
+    width: 100%;
+    text-indent: 20px;
+    border: none;
+    font-size: 1rem; 
+}
 @media(max-width: 640px) {
 
     .heading {
         font-size: 1.4rem;
     }
-
+    .main-header h1 {
+        font-size: 1rem; 
+    }
     .main-header nav {
         display: none;
     }
 
     .menu {
         display: block;
+    }
+
+    .main-header form {
+        display: none;
     }
 }

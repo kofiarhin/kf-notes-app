@@ -46,7 +46,7 @@ const loginController = async (req, res) => {
     if (!user)
       return res
         .satus(400)
-        .render("error", { message: "check details and try again" });
+        .render("error", { error: "check details and try again", user: "" });
 
     // compare password
     const isAuth = await bcrypt.compare(password, user.password);

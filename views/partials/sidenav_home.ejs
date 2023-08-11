@@ -1,0 +1,18 @@
+<div id="sidenav">
+    <i class="fas fa-times"></i>
+    <ul>
+        <li>
+            <form action="/notes/search" method="post">
+                <input type="search" name="searchItem" placeholder="Search....">
+            </form>
+        </li>
+        <li>
+            <a href="/users/profile">
+                <%= user.name %>
+            </a>
+        </li>
+        <li><a href="/notes/home"> Notes</a></li>
+        <li><a href="/notes/create"> Create</a></li>
+        <li><a href="/users/logout">Logout</a></li>
+    </ul>
+</div>
