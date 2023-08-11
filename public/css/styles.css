@@ -175,6 +175,18 @@ min-height: 70vh;
     margin: 0 auto;
 }
 
+#hero .link-wrapper a {
+ display: inline-block;
+ margin-left: 1rem;
+ background-color: rgb(57, 57, 230);
+ padding: 0.4rem 1rem;
+ color: white;
+ border-radius: 5px;
+}
+
+#hero .link-wrapper a.login {
+background-color: black; 
+}
 .menu {
     font-size: 1.5rem;
     cursor: pointer;
