@@ -168,7 +168,7 @@ min-height: 70vh;
 }
 
 #hero {
-    min-height: 70vh;
+    min-height: 60vh;
 }
 
 #hero .text-wrapper {
@@ -242,7 +242,7 @@ display: flex;
         font-size: 1.4rem;
     }
     .main-header h1 {
-        font-size: 1rem; 
+        font-size: 1.5rem; 
     }
     .main-header nav {
         display: none;
@@ -254,5 +254,11 @@ display: flex;
 
     .main-header form {
         display: none;
+    }
+
+    .form-wrapper form input,
+        .form-wrapper form button
+    {
+        font-size: 0.8rem;
     }
 }
